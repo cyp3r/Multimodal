@@ -100,10 +100,10 @@ unsigned int sf_mouthDet_template_R2010b_process_check_sum_call( int nlhs,
       return 0;
     }
   } else {
-    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(3017048303U);
-    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(221718908U);
-    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3248055327U);
-    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(520488365U);
+    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2553305582U);
+    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(997030994U);
+    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(852141990U);
+    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3601833781U);
   }
 
   return 1;

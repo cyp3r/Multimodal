@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.96"
+    ComputedModelVersion    "1.103"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wdanilo"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon May 16 13:22:33 2011"
-  RTWModifiedTimeStamp	  227452949
-  ModelVersionFormat	  "1.%<AutoIncrement:96>"
+  LastModifiedDate	  "Sun May 22 18:47:41 2011"
+  RTWModifiedTimeStamp	  227990835
+  ModelVersionFormat	  "1.%<AutoIncrement:103>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -790,7 +790,7 @@ Model {
   }
   System {
     Name		    "mouthDet_template_R2010b"
-    Location		    [114, 313, 1776, 1003]
+    Location		    [98, 215, 1760, 905]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1280,7 +1280,7 @@ Model {
       DialogControllerArgs    "DataTag6"
       SourceBlock	      "dspsrcs4/From Multimedia File"
       SourceType	      "From Multimedia File"
-      inputFilename	      "/home/wdanilo/work/studia/6/multimodalne/projekt/Multimodal/img/out_crop.avi"
+      inputFilename	      "/home/wdanilo/work/studia/6/multimodalne/projekt/Multimodal/movie_0_png/matlabavi.avi"
       loop		      on
       numPlays		      "inf"
       outputStreams	      "Video only"
@@ -1375,8 +1375,8 @@ Model {
       MaskValueString	      "9|8"
       System {
 	Name			"MHI1"
-	Location		[566, 186, 1919, 697]
-	Open			on
+	Location		[2486, 186, 3839, 697]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1923,7 +1923,7 @@ Model {
       Ports		      [1]
       Position		      [1345, 569, 1375, 601]
       Floating		      off
-      Location		      [2593, 859, 3163, 1089]
+      Location		      [2586, 836, 3156, 1066]
       Open		      on
       NumInputPorts	      "1"
       List {
@@ -1943,7 +1943,7 @@ Model {
       Ports		      [1]
       Position		      [1180, 534, 1210, 566]
       Floating		      off
-      Location		      [2592, 587, 3161, 826]
+      Location		      [2581, 565, 3150, 804]
       Open		      on
       NumInputPorts	      "1"
       List {
@@ -1952,7 +1952,7 @@ Model {
       }
       TimeRange		      "100"
       YMin		      "1"
-      YMax		      "8"
+      YMax		      "1"
       SaveName		      "ScopeData1"
       DataFormat	      "StructureWithTime"
       SampleTime	      "0"
@@ -2114,6 +2114,7 @@ Model {
       DstPort		      1
     }
     Line {
+      Labels		      [2, 0]
       SrcBlock		      "Embedded\nMATLAB Function"
       SrcPort		      3
       Points		      [0, -5]
@@ -2169,14 +2170,13 @@ Model {
       FontWeight	      "bold"
     }
     Annotation {
-      Name		      "INFO:\n > \nDEPENDENCIES:\n > \nCREATED: marzec-kwiecien2011, JaromirPrzybylo,R2010b\nMODIFIED: "
+      Name		      "INFO:\n > \nDEPENDENCIES:\n > Na platformie linuxowej nie jest mozliwe odczytywanie\n   w matlabie "
+      "filmow zakodowanych z dowolna kompresja w \n   avi. Dlatego tez z plikiem dostarczony jest skrypt\n   pngconvert"
+      "er.sh ktory zamienia filmy na sekwencje \n   obrazkow png oraz m-file conv.m ktory zamienia ta sekwencje\n   na "
+      "avi mozliwe do odczytu przez matlaba na platformie \n   linuxowej.\nCREATED: marzec-kwiecien2011, JaromirPrzybyl"
+      "o,R2010b\nMODIFIED: Wojciech Danilo\n          Mateusz Ziarko\n          maj 2011\n          R2010b LINUX gentoo"
       Position		      [29, 73]
       HorizontalAlignment     "left"
-    }
-    Annotation {
-      Name		      "ustawic \"colormap\" na ilosc obiektow \"k\""
-      Position		      [1226, 416]
-      BackgroundColor	      "orange"
     }
   }
 }
@@ -21675,20 +21675,21 @@ Stateflow {
       "etlona i e rdo wiata nie znajduje si\n%   w okolicach lub za kamer. W przeciwnym wypadku wntrze ust mog"
       "oby mie bardzo zbliony kolor\n%   do koloru skry i wykrycie zmiany pooenia warg analizujc dane pozyskane "
       "z kamery\n%   mogoby da niepoprawne rezultaty\n%\n\n[m,n]=size(Label);\nilobj=length(Area);\nrotFeret = zeros("
-      "1,ilobj);\nLorig = Original\nL=zeros(m,n,'uint8');\n\nmouth=0;\n\n% Analiza\ni=1;k=1;\nfor i=1:ilobj\n    % Spra"
-      "wdzenie wielkosci obiektow\n    if Area(i) > 100 && Area(i) < (m*n*0.5)\n        % sprawdzanie odpowiedniego kt"
-      "a wykrytego obiektu\n        % jeeli wspczynnik Orientation jest odchylony od 0 o wicej ni 0.5\n        % i"
-      "stnieje b. due prawdopodobiestwo, e nie wykryto ust \n        %(lecz np. powiewajcy rkaw od bluzki - klatka"
-      " ~ 100)\n        if abs(Orientation(i)) < 0.5\n            % rotFeret jest specyficznym wspczynnikiem Fereta. "
-      "\n            % Jest to wspczynnik Fereta ale analizowany w obrconej przestrzeni\n            % i jest on rw"
-      "ny stosunkowi promieni elipsy opisanej na znalezionym ksztacie\n            % im bliszy 1 tym ksztat jest bli"
-      "szy kole.\n            % Podczas otwierania ust, ksztat zmiany otworu gbowego :D jest bliszy kolu\n         "
-      "   % ni ksztat zakrelony przez zmine pooenia brody.\n            \n            rotFeret(i) = MajorAxis/Mino"
-      "rAxis;\n%             L=L + uint8(Label==i)*k;\n%             k=k+1;\n        end\n    end\nend\n\n% sprawdzamy "
-      "ktry z ksztatw ma wspczynnik rotFeret najbliszy 1\nrotFeret = abs(rotFeret-1);\n[min mini] = min(rotFeret)"
-      "\n\n% sprawdzamy czy jakikolwiek ksztat zosta wykryty i jeeli tak to dajemy output\nif min ~= 1\n    mouth = "
-      "1\n    L=L + uint8(Label==mini)*k;\n    Lorig = Lorig + uint8(Label==mini)*255;\nend\n        \n\n\n"
-      editorLayout	      "100 M4x1[334 46 1080 675]"
+      "1,ilobj);\nLorig = Original;\nL=zeros(m,n,'uint8');\n\nmouth=0;\n\n% Analiza\ni=1;k=0;\nfor i=1:ilobj\n    % Spr"
+      "awdzenie wielkosci obiektow\n    if Area(i) > 100 && Area(i) < (m*n*0.5)\n        k = k+1;\n        % sprawdzani"
+      "e odpowiedniego kta wykrytego obiektu\n        % jeeli wspczynnik Orientation jest odchylony od 0 o wicej n"
+      "i 0.5\n        % istnieje b. due prawdopodobiestwo, e nie wykryto ust \n        %(lecz np. powiewajcy rkaw"
+      " od bluzki - klatka ~ 100)\n        if abs(Orientation(i)) < 0.5\n            % rotFeret jest specyficznym wsp"
+      "czynnikiem Fereta. \n            % Jest to wspczynnik Fereta ale analizowany w obrconej przestrzeni\n        "
+      "    % i jest on rwny stosunkowi promieni elipsy opisanej na znalezionym ksztacie\n            % im bliszy 1 t"
+      "ym ksztat jest bliszy kole.\n            % Podczas otwierania ust, ksztat zmiany otworu gbowego :D jest bli"
+      "szy kolu\n            % ni ksztat zakrelony przez zmine pooenia brody.\n            \n            rotFeret("
+      "i) = MajorAxis/MinorAxis;\n%             L=L + uint8(Label==i)*k;\n%             k=k+1;\n        end\n    end\ne"
+      "nd\n\n% sprawdzamy ktry z ksztatw ma wspczynnik rotFeret najbliszy 1\nrotFeret = abs(rotFeret-1);\n[min mi"
+      "ni] = min(rotFeret);\n\n% sprawdzamy czy jakikolwiek ksztat zosta wykryty i jeeli tak to dajemy output\nif mi"
+      "n ~= 1\n    mouth = 1;\n    L=L + uint8(Label==mini)*k;\n    Lorig = Lorig + uint8(Label==mini)*255;\nend\n     "
+      "   \n\n\n"
+      editorLayout	      "100 M4x1[25 25 1080 675]"
       fimathString	      "fimath(...\n'RoundMode', 'floor',...\n'OverflowMode', 'wrap',...\n'ProductMode', 'KeepLSB', "
       "'ProductWordLength', 32,...\n'SumMode', 'KeepLSB', 'SumWordLength', 32,...\n'CastBeforeSum', true)"
       emlDefaultFimath	      FimathUserSpecified
